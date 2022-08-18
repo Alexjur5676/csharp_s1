@@ -14,21 +14,21 @@ int number = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[A];
 Random rand = new Random();
 int i;
-bool res = false;
+bool flag = false;  
 
 for (i = 0; i < array.Length; i++)
 {
     array[i] = rand.Next(-9, 10);
     if (array[i] == number)
     {
-        res = true;
+        flag = true;
         // Console.WriteLine($"Да - {number}");
     }
 }
 
 Console.WriteLine(string.Join(", ", array));
 
-if (res == true)
+if (flag == true)
 {
     Console.WriteLine("Да");
 }
