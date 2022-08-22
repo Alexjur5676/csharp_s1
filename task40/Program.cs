@@ -9,7 +9,7 @@ Console.WriteLine("Введите число B:");
 int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число C:");
 int c = Convert.ToInt32(Console.ReadLine());
-if(a<b+c && b<a+c && c<a+b)
+if (a < b + c && b < a + c && c < a + b)
 {
     Console.WriteLine("Треугольник существует");
 }
