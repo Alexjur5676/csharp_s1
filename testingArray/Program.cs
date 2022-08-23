@@ -15,6 +15,10 @@ int[] RandomArray(int size, int leftRange, int rightRange)
 }
 
 int[] sourseArray = RandomArray(12,-10,10);
-int[] copieArray = sourseArray;
+int[] copiedArray = sourseArray;
+
+sourseArray[0] = 1000;
+
 Console.WriteLine($"Исходный массив {string.Join(", ", sourseArray)}");
-Console.WriteLine($"Скопированный массив {string.Join(", ", copieArray)}");
+Console.WriteLine($"Скопированный массив {string.Join(", ", copiedArray)}");
+
