@@ -1,5 +1,6 @@
-﻿//  Задайте двумерный массив. Напишите программу, 
-//  которая поменяет местами первую и последнюю строку массива. 
+﻿//  Задайте двумерный массив. Напишите программу, которая
+//   заменяет строки на столбцы. В случае, если это невозможно, 
+//   программа должна вывести сообщение для пользователя.
 
 int[,] FillMatrix(int rowsCount, int columsCount, int leftRange = -10, int rightRange = 10)
 {
@@ -15,6 +16,7 @@ int[,] FillMatrix(int rowsCount, int columsCount, int leftRange = -10, int right
     return matrix;
 }
 void PrintMatrix(int[,] matrix)
+
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -26,20 +28,25 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-void SwapFirstAndLastRows(int[,] matrix)
+int[,] TransposeMatrix(int[,] matrix)
 {
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    int[,] newMatrix = new int[matrix.GetLength(1), matrix.GetLength(0)];
+
+    for (int i = 0; i < newMatrix.GetLength(0); i++)
     {
-        int temp = matrix[0, j];
-        matrix[0, j] = matrix[matrix.GetLength(0) - 1, j];
-        matrix[matrix.GetLength(0) - 1, j] = temp;
+        for (int j = 0; j < newMatrix.GetLength(1); j++)
+        {
+            newMatrix[i, j] = matrix[j, i];
+        }
     }
+    return newMatrix;
 }
-Console.Write("Введите n и m через Enter ");
+
+Console.Write("Введите m и n через Enter "); 
 int m = Convert.ToInt32(Console.ReadLine());
 int n = Convert.ToInt32(Console.ReadLine());
 int[,] matrix = FillMatrix(m, n);
 PrintMatrix(matrix);
 Console.WriteLine();
-SwapFirstAndLastRows(matrix);
-PrintMatrix(matrix);
+int[,] tmatrix = TransposeMatrix(matrix);
+PrintMatrix(tmatrix);
