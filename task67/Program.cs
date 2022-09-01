@@ -4,19 +4,14 @@
 // 45 -> 9
 
 
-Console.Write("Введите число N: ");
-int n = Convert.ToInt32(Console.ReadLine());
 
-int GetSumDigit(int number);
-{
-    if(number <= 0) return 0;
-    return number % 10 + GetSumDigit(number / 10);
-}
+Console.WriteLine("Введите число N");
+int number = Convert.ToInt32(Console.ReadLine());
 
-void PrintNumbersToN(int n)
+int sum = GetSumDigit(number);
+Console.WriteLine(sum);
+int GetSumDigit(int n)
 {
-    if(n < 1) return;
-    PrintNumbersToN(n - 1);
-    Console.Write(n + " ");
+    if (n <= 0) return 0;
+    return n % 10 + GetSumDigit(n / 10);
 }
-int res = GetSumDigit(number / 10);
