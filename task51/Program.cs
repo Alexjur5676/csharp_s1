@@ -26,17 +26,17 @@ void PrintMatrix(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(matrix[i, j] + " ");
+            Console.Write(matrix[i, j] + " ") ;
         }
         Console.WriteLine();
     }
 }
 Console.Write("Введите n и m через Enter ");
-int m = Convert.ToInt32(Console.ReadLine());
+int m= Convert.ToInt32(Console.ReadLine());
 int n = Convert.ToInt32(Console.ReadLine());
 int[,] matrix = FillMatrix(m, n);
 int sum = 0;
-int min = 0;
+int min = 0 ;а
 min = m;
 if (n< min)
 {
@@ -44,7 +44,7 @@ if (n< min)
 }
 for (int i = 0; i < min; i++)
 {
-    sum += matrix[i,i];
+    sum += matrix[i,i];ааfа
 }
 
 PrintMatrix(matrix);
